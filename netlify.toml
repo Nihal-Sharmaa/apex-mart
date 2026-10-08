@@ -1,0 +1,13 @@
+# Apex Mart UI only. Netlify cannot run the FastAPI Python server.
+# 1. Deploy the API on Render/Railway first.
+# 2. Replace YOUR-BACKEND.onrender.com below with that URL (no trailing slash).
+# 3. In Netlify: Site settings → Build → Publish directory = static
+
+[build]
+  publish = "static"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://YOUR-BACKEND.onrender.com/api/:splat"
+  status = 200
+  force = true
